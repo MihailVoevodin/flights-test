@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from './FlightCard.module.scss';
-import {companyLogo} from '../../common/Helpers';
+import {companyLogo} from '../../common/Helpers/PlacesHelpers';
+import {Departure} from '../Departure/Departure';
+import {Arrival} from '../Arrival/Arrival';
 
 export const FlightCard = ({flight}) => {
     return (
-        <div>
+        <div className={styles.card}>
             <div className={styles.cardHeader}>
                 <img className={styles.cardLogo} src={companyLogo(flight)} alt={flight.carrier.caption} />
                 <div className={styles.price}>
@@ -13,6 +15,12 @@ export const FlightCard = ({flight}) => {
                     <span>Стоимость для одного взрослого пассажира</span>
                 </div>
             </div>
+            <div>
+                <Departure flight={flight} />
+                <hr className={styles.line} />
+                <Arrival flight={flight} />
+            </div>
+            <button className={styles.cardBtn}>Выбрать</button>
         </div>
     );
 };

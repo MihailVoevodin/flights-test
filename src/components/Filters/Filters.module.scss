@@ -1,0 +1,30 @@
+.filtersContainer {
+  text-align: left;
+}
+
+.filters,
+.airlines {
+  label {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.price {
+  span {
+    display: block;
+    margin-right: 10px;
+    width: 20px;
+  }
+  input {
+    width: 200px;
+  }
+}
+
+.priceInputContainer {
+  display: flex;
+  align-items: center;
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+}

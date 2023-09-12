@@ -23,5 +23,66 @@
   text-align: right;
   padding-right: 20px;
   font-size: 26px;
-  line-height: 0;
+  line-height: 20px;
+  span {
+    font-size: 12px;
+  }
+}
+
+.line {
+  height: 2px;
+  border: none;
+  color: #1E90FF;
+  background-color: #1E90FF;
+}
+
+.arrivalAirportCode {
+  color: #1E90FF;
+}
+
+.flightOutTime {
+  display: flex;
+  justify-content: space-around;
+}
+
+.transferText {
+  color: orange;
+  position: relative;
+  line-height: 1.5;
+  span {
+    background-color: #fff;
+    padding: 0 15px;
+  };
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: rgb(207, 206, 206);
+    width: 600px;
+    height: 1px;
+    top: 14px;
+    left: 100px;
+    z-index: -1;
+  };
+}
+
+.transferLine {
+  width: 600px;
+  margin: 10px auto;
+}
+
+.carrier {
+  text-align: left;
+  padding-left: 20px;
+  border: none;
+}
+
+.cardBtn {
+  width: 100%;
+  border: none;
+  background-color: orange;
+  padding: 10px 0;
+  text-transform: uppercase;
+  color: white;
+  margin: 10px 0;
+  cursor: pointer;
 }
