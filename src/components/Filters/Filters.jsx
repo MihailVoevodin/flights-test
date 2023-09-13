@@ -55,7 +55,7 @@ export const Filters = () => {
                 <Radio.Group defaultValue={sortType} onChange={onChangeSort}>
                     {SORT_TYPES.map((type) => {
                         return (
-                            <Radio key={type.key} value={type.value}>
+                            <Radio style={{display: 'flex', alignItems: 'center'}} key={type.key} value={type.value}>
                                 {type.text}
                             </Radio>
                         );
