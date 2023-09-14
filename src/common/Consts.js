@@ -1,3 +1,6 @@
+/**
+ * Названия авиакомпаний.
+ */
 export const COMPANIES_NAMES = {
     AIR_FRANCE: 'Air France',
     KLM: 'KLM',
@@ -11,6 +14,9 @@ export const COMPANIES_NAMES = {
     PEGASUS: 'Pegasus Hava Tasimaciligi A.S.',
 };
 
+/**
+ * Массив видов сортировок.
+ */
 export const SORT_TYPES = [
     {
         key: 1,
@@ -29,6 +35,9 @@ export const SORT_TYPES = [
     },
 ];
 
+/**
+ * Фильтры по количеству пересадок.
+ */
 export const TRANSFER_FILTERS = {
     WITH_TRANSFER: {
         value: 'withTransfer',
@@ -40,11 +49,17 @@ export const TRANSFER_FILTERS = {
     },
 };
 
+/**
+ * Текстовки для фильтра по цене.
+ */
 export const PRICE_FILTERS = {
     PRICE_FROM: 'От',
     PRICE_TO: 'До',
 };
 
+/**
+ * Текстовки для фильтра по заданным авиакомпаниям.
+ */
 export const AIRLINES_FILTERS = {
     LOT: 'LOT Polish Airlines',
     AEROFLOT: 'Аэрофлот - российские авиалинии',

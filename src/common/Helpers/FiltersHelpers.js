@@ -1,12 +1,18 @@
 import {flights} from '../flights';
 import {AIRLINES_FILTERS, SORT_TYPES} from '../Consts';
 
+/**
+ * Функция расчета минимальной цены по заданной авиакомпании.
+ */
 export const calcMinPrice = (airline) => {
     const prices = flights.filter((flight) => flight.flight.carrier.caption === airline).map((flight) => flight.flight.price.total.amount);
 
     return Math.min.apply(null, prices);
 };
 
+/**
+ * Функция сортировки списка полетов по фильтрам.
+ */
 export const sortPriceAndTime = (flights, sortType) => {
     switch (sortType) {
         case SORT_TYPES[0].value:
@@ -20,6 +26,9 @@ export const sortPriceAndTime = (flights, sortType) => {
     }
 };
 
+/**
+ * Функция фильтрации списка полетов по количеству пересадок.
+ */
 export const transferFilter = (flights, withTransfer, withoutTransfer) => {
     if (withTransfer) {
         return flights.filter((flight) => flight.flight.legs[0].segments.length === 2);
@@ -29,6 +38,9 @@ export const transferFilter = (flights, withTransfer, withoutTransfer) => {
     }
 };
 
+/**
+ * Функция фильтрации списка полетов по авиакомпании в фильтрах.
+ */
 export const airlineFilter = (flights, LOTAirline, AeroflotAirline) => {
     const LOTFlights = flights.filter((flight) => flight.flight.carrier.caption === AIRLINES_FILTERS.LOT);
     const AeroflotFlights = flights.filter((flight) => flight.flight.carrier.caption === AIRLINES_FILTERS.AEROFLOT);
@@ -43,10 +55,13 @@ export const airlineFilter = (flights, LOTAirline, AeroflotAirline) => {
     }
 };
 
-export const priceFilter = (store, priceFrom, priceTo) => {
+/**
+ * Функция фильтрации списка полетов по цене.
+ */
+export const priceFilter = (flights, priceFrom, priceTo) => {
     if (Number(priceTo) >= 22000) {
-        return store.filter((flight) => flight.flight.price.total.amount > priceFrom && flight.flight.price.total.amount < priceTo);
+        return flights.filter((flight) => flight.flight.price.total.amount > priceFrom && flight.flight.price.total.amount < priceTo);
     } else if (Number(priceTo) <= 22000) {
-        return store;
+        return flights;
     }
 };

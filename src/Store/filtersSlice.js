@@ -11,6 +11,9 @@ const initialState = {
     AeroflotAirline: false,
 };
 
+/**
+ * Слайс для контроля состояния фильтров.
+ */
 const filtersSlice = createSlice({
     name: 'filters',
     initialState,

@@ -3,6 +3,9 @@ import styles from '../FlightCard/FlightCard.module.scss';
 import {arrivalAirport, arrivalAirportCode, arrivalCityOut} from '../../common/Helpers/PlacesHelpers';
 import {calcTime, formatArrivalDate, formatDepartureDate} from '../../common/Helpers/DatesHelpers';
 
+/**
+ * Компонент отображения вылета.
+ */
 export const Departure = ({flight}) => {
     const firstLeg = flight.legs[0];
     const firstSegment = flight.legs[0].segments[0];

@@ -13,6 +13,9 @@ const dateOptions = {
 
 let date = '';
 
+/**
+ * Функция возвращающая компонент вывода определенного формата даты.
+ */
 const renderDate = (date) => {
     return (
         <div>
@@ -22,12 +25,18 @@ const renderDate = (date) => {
     );
 };
 
+/**
+ * Функция расчета даты вылета.
+ */
 export const formatDepartureDate = (flight, segment) => {
     date = new Date(segment.departureDate);
 
     return renderDate(date);
 };
 
+/**
+ * Функция расчета даты прибытия.
+ */
 export const formatArrivalDate = (flight, leg) => {
     if (leg.segments.length === 2) {
         date = new Date(leg.segments[1].arrivalDate);
@@ -40,6 +49,9 @@ export const formatArrivalDate = (flight, leg) => {
     }
 };
 
+/**
+ * Функция расчета правильного формата времени по минутам.
+ */
 export const calcTime = (mins) => {
     let hours = Math.trunc(mins / 60);
     let minutes = mins % 60;

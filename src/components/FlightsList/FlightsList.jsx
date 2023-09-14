@@ -5,6 +5,9 @@ import {useSelector} from 'react-redux';
 import {airlineFilter, priceFilter, sortPriceAndTime, transferFilter} from '../../common/Helpers/FiltersHelpers';
 import styles from './FlightsList.module.scss';
 
+/**
+ * Компонент отображения списка полетов.
+ */
 export const FlightsList = () => {
     const {sortType, withTransfer, withoutTransfer, priceFrom, priceTo, LOTAirline, AeroflotAirline} = useSelector(
         (state) => state.filters

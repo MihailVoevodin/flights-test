@@ -14,6 +14,9 @@ import {
 } from '../../Store/filtersSlice';
 import {calcMinPrice} from '../../common/Helpers/FiltersHelpers';
 
+/**
+ * Компонент отображения фильтров.
+ */
 export const Filters = () => {
     const {sortType, withTransfer, withoutTransfer, priceFrom, priceTo, LOTAirline, AeroflotAirline} = useSelector(
         (state) => state.filters
